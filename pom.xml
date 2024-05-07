@@ -9,11 +9,33 @@
     <version>1.0</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>21</java.version>
+        <java.version>8</java.version>
     </properties>
+
+    <dependencies>
+        <!--控制台打印info、debug日志需要两个包，一个是lombok，另一个是logback。@Slf4j来自于lombok，作用是给当前类创建常见一个log实例。然后引入logback，log.info()才不会报错。
+另外，引入lombok，才可以使用@Data等方法-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--引入下面的包，才可以用@Test注释-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
